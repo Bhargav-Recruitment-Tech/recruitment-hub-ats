@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f8f9fa;
+font-family:Arial;
+}
+
+.navbar{
+margin-bottom:20px;
+}
+
+.section-title{
+font-size:20px;
+font-weight:600;
+margin-top:30px;
+margin-bottom:15px;
+border-bottom:2px solid #dee2e6;
+padding-bottom:5px;
+}
+
+.card{
+border-radius:15px;
+padding:20px;
+transition:transform 0.2s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.btn{
+border-radius:12px;
+font-size:16px;
+padding:10px;
+}
+
+.btn-main{
+background:#0d6efd;
+color:white;
+}
+
+.locked{
+opacity:0.45;
+pointer-events:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background:#0d6efd;">
+  <div class="container-fluid">
+
+    <div class="w-100 d-flex justify-content-between align-items-center">
+
+      <!-- Left Title -->
+      <div class="navbar-brand text-white fw-bold">
+        Recruitment Hub
+      </div>
+
+      <!-- Center Quote -->
+      <div class="text-white" style="font-style:italic; font-size:14px;">
+        Where Talent Meets Opportunity
+      </div>
+
+      
+      <!-- Right Menu -->
+<ul class="navbar-nav d-flex align-items-center">
+
+  <li class="nav-item">
+    <span class="nav-link text-white">
+      Welcome, {{ session['user'] }}
+    </span>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-white" href="/">Home</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">About Us</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">Contact</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-white" href="#">FAQ</a>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link text-warning fw-bold" href="/logout">Logout</a>
+  </li>
+
+</ul>
+    </div>
+
+  </div>
+</nav>
+
+<div class="container">
+
+<h2 class="mb-3">Dashboard</h2>
+
+
+<!-- Recruitment Operations -->
+
+<div class="section-title">Recruitment Operations</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Clients</h5>
+<p>Manage client companies</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Jobs</h5>
+<p>Manage job openings</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm">
+<h5>Candidates</h5>
+<p>Add & View Candidates</p>
+<a href="{{ url_for('candidates_add') }}" class="btn btn-main w-100">Manage</a>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Interviews</h5>
+<p>Manage interviews</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Offers</h5>
+<p>Manage offers</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- Data Sources -->
+
+<div class="section-title">Data Sources</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Bulk Resume Parser</h5>
+<p>Import multiple resumes</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- Insights & Reporting -->
+
+<div class="section-title">Insights & Reporting</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Reports</h5>
+<p>Generate recruitment reports</p>
+<button class="btn btn-main w-100">View</button>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Analytics</h5>
+<p>Recruitment analytics</p>
+<button class="btn btn-main w-100">View</button>
+</div>
+</div>
+
+</div>
+
+
+<!-- System Management -->
+
+<div class="section-title">System Management</div>
+
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Settings</h5>
+<p>Configure system</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow-sm locked">
+<h5>Admin</h5>
+<p>User administration</p>
+<button class="btn btn-main w-100">Manage</button>
+</div>
+</div>
+
+</div>
+
+
+</div>
+
+</body>
+<html>
+
